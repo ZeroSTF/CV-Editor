@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Riadh Chnitir</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="controls">
+		<button onclick="generatePDF()">Export to PDF</button>
+		<button onclick="toggleEditMode()">Toggle Edit Mode</button>
+		<button onclick="saveProgress()">Save Progress</button>
+		<button onclick="loadProgress()">Load Saved</button>
+		<button onclick="resetProgress()">Reset to Original</button>
+	</div>
+    
+    <div id="cv-container" class="cv-container">
+        <div class="header">
+			<div class="header-content">
+				<div class="header-left">
+					<h1 contenteditable="false">Riadh Chnitir</h1>
+					<p contenteditable="false">Étudiant en Informatique</p>
+				</div>
+				<div class="header-right">
+					<div class="contact-info">
+						<p contenteditable="false">58 Rue Abu Jihad, Bhira, Bizerte, Tunisie</p>
+						<p contenteditable="false">+216 51 591 222</p>
+						<p contenteditable="false">riadhchnitir0506@gmail.com</p>
+						<p><a href="https://github.com/ZeroSTF" target="_blank" contenteditable="false">ZeroSTF</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <section class="section">
+            <h2>Formation</h2>
+            <div class="entry">
+                <div class="date" contenteditable="false">Sep. 2022 - présent</div>
+                <div class="content" contenteditable="false">
+                    Ingénierie en Informatique (Spécialité Informatique Appliquée à la Finance),
+                    Esprit, Ariana, Tunisie
+                </div>
+            </div>
+            <div class="entry">
+                <div class="date" contenteditable="false">Sep. 2020 - Juin 2022</div>
+                <div class="content" contenteditable="false">
+                    Prépa Intégrée en Sciences Informatiques, Esprit, Ariana, Tunisie
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Expérience Professionnelle</h2>
+            <div class="entry">
+                <div class="date" contenteditable="false">juin 2024 - sep. 2024</div>
+                <div class="content" contenteditable="false">
+                    <strong>Ingénieur Full Stack, Chef d'Équipe et Chef Technique, Esprit</strong>
+                    <ul>
+                        <li>Participation à des projets de startups utilisant Spring Boot, Angular, Flask, MongoDB et MySQL.</li>
+                        <li>E-Commerce: Développement d'un module CRM pour la gestion des ventes, des commandes, des contrats clients et de la facturation.</li>
+                        <li>Gestion des Achats: Création d'un module intelligent pour améliorer la gestion des achats et la sélection des fournisseurs.</li>
+                        <li>Dashboarding et BI: Développement d'un module pour la création de tableaux de bord interactifs et l'analyse prédictive.</li>
+                        <li>AI Imagerie et Réseaux Sociaux: Développement d'un module pour la création, modification et publication de postes publicitaires sur Facebook avec un assistant AI intégré.</li>
+                        <li>Direction d'une équipe de développeurs, collaboration avec les parties prenantes et mise en œuvre de pratiques agiles.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="entry">
+                <div class="date" contenteditable="false">avril 2024 - juin 2024</div>
+                <div class="content" contenteditable="false">
+                    <strong>Ingénieur Full Stack, Freelance</strong>
+                    <ul>
+                        <li>Développement d'une application full stack de e-commerce et de gestion d'entrepôt en utilisant Spring Boot, Angular et MySQL.</li>
+                        <li>Conception Architecturale: Mise en place d'infrastructures robustes et sécurisées.</li>
+                        <li>Fonctionnalités Clés: Carte pour les fournisseurs et dépôts, interface e-commerce intuitive et esthétique.</li>
+                        <li>Analyse, conception, planification, développement et déploiement d'une application multi-fonctionnelle.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="date" contenteditable="false">Juin 2023 - Septembre 2023</div>
+                <div class="content" contenteditable="false">
+                    <strong>Développeur Full Stack (Stage), Dynamix Services, Bizerte, Tunisie</strong>
+                    <ul>
+                        <li>Réalisation de tableaux de bord interactifs et de rapports analytiques, facilitant ainsi la gestion des données et la visualisation des tendances.</li>
+                        <li>Analyse, conception, planification et développement d'une application Symfony.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Compétences Techniques</h2>
+            <div class="skills">
+                <div class="skill-group">
+                    <h3>Backend</h3>
+                    <p contenteditable="false">Spring Boot, Spring Data, Architecture Hexagonale, Spring Security, OAuth 2.0, .NET, Flask</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Frontend</h3>
+                    <p contenteditable="false">Angular, Symfony, JavaFX, QT</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Sécurité</h3>
+                    <p contenteditable="false">OAuth 2.0, OpenID Connect, JWT, PKCE, RSA Keys</p>
+                </div>
+                <div class="skill-group">
+                    <h3>DevOps</h3>
+                    <p contenteditable="false">Docker, Kubernetes, Jenkins, GitHub Actions, Vagrant</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Autres</h3>
+                    <p contenteditable="false">SDL, Arduino</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Langages Préférés</h3>
+                    <p contenteditable="false">C, C++, C#, PHP, Java, TypeScript, JavaScript, HTML5, CSS3</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Compétences Transversales</h2>
+            <div class="skills">
+                <div class="skill-group">
+                    <h3>Collaboration</h3>
+                    <p contenteditable="false">Excellente capacité à travailler en équipe sur des projets complexes.</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Résolution de Problèmes</h3>
+                    <p contenteditable="false">Capacité à résoudre des problèmes techniques de manière efficace et innovante.</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Communication</h3>
+                    <p contenteditable="false">Aptitude à expliquer des concepts techniques de manière claire aux parties prenantes non techniques.</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Adaptabilité</h3>
+                    <p contenteditable="false">Ouvert au changement et capable de s'adapter rapidement à de nouveaux environnements.</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Gestion du Temps</h3>
+                    <p contenteditable="false">Capacité à gérer efficacement les priorités et à respecter les délais.</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Pensée Analytique</h3>
+                    <p contenteditable="false">Analyse approfondie des situations pour fournir des solutions optimales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Langues</h2>
+            <p contenteditable="false">Anglais (Courant), Français (Courant), Arabe (Courant)</p>
+        </section>
+
+        <section class="section">
+            <h2>Projets Notables</h2>
+            <div class="entry">
+                <div class="date" contenteditable="false">2023-2024</div>
+                <div class="content" contenteditable="false">
+                    <strong>Développement d'une Application Web de Microfinance</strong>
+                    <p>Développement d'une plateforme de microfinance, utilisant Angular pour le frontend, Spring Boot pour le backend, et SQL pour la base de données. Rôle: développement du module utilisateur pour la gestion de l'authentification et coordination de l'équipe via GitHub et Trello.</p>
+                </div>
+            </div>
+            
+            <div class="entry">
+                <div class="date" contenteditable="false">2022-2023</div>
+                <div class="content" contenteditable="false">
+                    <strong>Développement d'une Application Web E-commerce Durable</strong>
+                    <p>Création d'une application e-commerce en trois formats : web (Symfony), desktop (JavaFX) et mobile (Codename One).</p>
+                </div>
+            </div>
+            
+            <div class="entry">
+                <div class="date" contenteditable="false">2021-2022</div>
+                <div class="content" contenteditable="false">
+                    <strong>Développement d'une Application QT C++</strong>
+                    <p>Création d'une application de gestion de garages avec integration arduino.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
