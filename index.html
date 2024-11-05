@@ -15,6 +15,20 @@
 		<button onclick="loadProgress()">Load Saved</button>
 		<button onclick="resetProgress()">Reset to Original</button>
 	</div>
+	
+	<div class="formatting-controls">
+		<button onclick="formatText('bold')" title="Bold"><b>B</b></button>
+		<button onclick="formatText('italic')" title="Italic"><i>I</i></button>
+		<button onclick="formatText('underline')" title="Underline"><u>U</u></button>
+		<select onchange="formatText('heading', this.value)">
+			<option value="">Normal Text</option>
+			<option value="h1">Heading 1</option>
+			<option value="h2">Heading 2</option>
+			<option value="h3">Heading 3</option>
+		</select>
+		<button onclick="formatText('list', 'bullet')" title="Bullet List">•</button>
+		<button onclick="formatText('list', 'number')" title="Numbered List">1.</button>
+	</div>
     
     <div id="cv-container" class="cv-container">
         <div class="header">
@@ -82,7 +96,7 @@
             </div>
 
             <div class="entry">
-                <div class="date" contenteditable="false">Juin 2023 - Septembre 2023</div>
+                <div class="date" contenteditable="false">Juin 2023 - Sep. 2023</div>
                 <div class="content" contenteditable="false">
                     <strong>Développeur Full Stack (Stage), Dynamix Services, Bizerte, Tunisie</strong>
                     <ul>

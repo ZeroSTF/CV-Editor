@@ -1,22 +1,63 @@
 let editMode = false;
 let originalContent = '';
 
-// Save the original content when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     originalContent = document.getElementById('cv-container').innerHTML;
-    loadProgress(); // Load any saved progress
+    loadProgress();
 });
 
 function toggleEditMode() {
     editMode = !editMode;
     const editableElements = document.querySelectorAll('[contenteditable]');
+    const formattingControls = document.querySelector('.formatting-controls');
+    
     editableElements.forEach(element => {
         element.contentEditable = editMode;
     });
     
-    // Show visual feedback
+    formattingControls.style.display = editMode ? 'block' : 'none';
     showMessage(editMode ? 'Edit mode enabled' : 'Edit mode disabled');
 }
+
+function formatText(command, value = null) {
+    if (!editMode) return;
+    
+    if (command === 'heading') {
+        if (value) {
+            document.execCommand('formatBlock', false, value);
+        }
+    } else if (command === 'list') {
+        if (value === 'bullet') {
+            document.execCommand('insertUnorderedList', false, null);
+        } else if (value === 'number') {
+            document.execCommand('insertOrderedList', false, null);
+        }
+    } else {
+        document.execCommand(command, false, null);
+    }
+}
+
+// Add keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+    if (!editMode) return;
+    
+    if (e.ctrlKey || e.metaKey) {
+        switch (e.key.toLowerCase()) {
+            case 'b':
+                e.preventDefault();
+                formatText('bold');
+                break;
+            case 'i':
+                e.preventDefault();
+                formatText('italic');
+                break;
+            case 'u':
+                e.preventDefault();
+                formatText('underline');
+                break;
+        }
+    }
+});
 
 function generatePDF() {
     const element = document.getElementById('cv-container');
@@ -28,12 +69,14 @@ function generatePDF() {
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
 
-    // Temporarily hide controls for PDF generation
     const controls = document.querySelector('.controls');
+    const formattingControls = document.querySelector('.formatting-controls');
     controls.style.display = 'none';
+    formattingControls.style.display = 'none';
 
     html2pdf().set(options).from(element).save().then(() => {
         controls.style.display = 'block';
+        if (editMode) formattingControls.style.display = 'block';
     });
 }
 
@@ -60,26 +103,23 @@ function resetProgress() {
 }
 
 function showMessage(text) {
-    // Remove any existing message
     const existingMessage = document.querySelector('.save-message');
     if (existingMessage) {
         existingMessage.remove();
     }
 
-    // Create and show new message
     const message = document.createElement('div');
     message.className = 'save-message';
     message.textContent = text;
     document.body.appendChild(message);
     message.style.display = 'block';
 
-    // Remove message after animation
     setTimeout(() => {
         message.remove();
     }, 3000);
 }
 
-// Add autosave functionality (every 30 seconds)
+// Autosave
 setInterval(() => {
     if (editMode) {
         saveProgress();
