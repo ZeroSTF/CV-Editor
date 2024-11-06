@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Riadh Chnitir</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
-    <div class="controls">
-		<div class="primary-controls">
-			<button onclick="toggleEditMode()" title="Toggle Edit Mode">Edit</button>
-			<button onclick="generatePDF()" title="Export to PDF">PDF</button>
-		</div>
-		
-		<div class="backup-controls">
-			<button onclick="exportToFile()" title="Save backup to your computer">Save Backup</button>
-			<button onclick="importFromFile()" title="Load from backup file">Load Backup</button>
-			<button onclick="resetProgress()" title="Reset to original version">Reset</button>
-		</div>
-	</div>
-	
-	<div class="formatting-controls">
-		<button onclick="formatText('bold')" title="Bold"><b>B</b></button>
-		<button onclick="formatText('italic')" title="Italic"><i>I</i></button>
-		<button onclick="formatText('underline')" title="Underline"><u>U</u></button>
-		<select onchange="formatText('heading', this.value)">
-			<option value="">Normal Text</option>
-			<option value="h1">Heading 1</option>
-			<option value="h2">Heading 2</option>
-			<option value="h3">Heading 3</option>
-		</select>
-		<button onclick="formatText('list', 'bullet')" title="Bullet List">•</button>
-		<button onclick="formatText('list', 'number')" title="Numbered List">1.</button>
-	</div>
-    
-    <div id="cv-container" class="cv-container">
+
         <div class="header">
 			<div class="header-content">
 				<div class="header-left">
@@ -47,7 +10,7 @@
 						<p contenteditable="false">58 Rue Abu Jihad, Bhira, Bizerte, Tunisie</p>
 						<p contenteditable="false">+216 51 591 222</p>
 						<p contenteditable="false">riadhchnitir0506@gmail.com</p>
-						<p><a href="https://github.com/ZeroSTF" target="_blank" contenteditable="false">ZeroSTF</a></p>
+						<p><a href="https://github.com/ZeroSTF" target="_blank" contenteditable="false">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -77,12 +40,12 @@
                 <div class="content" contenteditable="false">
                     <strong>Ingénieur Full Stack, Chef d'Équipe et Chef Technique, Esprit</strong>
                     <ul>
-                        <li>Participation à des projets de startups utilisant Spring Boot, Angular, Flask, MongoDB et MySQL.</li>
-                        <li>E-Commerce: Développement d'un module CRM pour la gestion des ventes, des commandes, des contrats clients et de la facturation.</li>
+                        <li>Participation à des projets de startups utilisant <b>Spring Boot</b>, <b>Angular 18</b>, <b>Flask</b>, <b>MongoDB</b> et <b>MySQL</b>.</li>
+                        <li>E-Commerce: Développement d'un module <b>CRM</b> pour la gestion des ventes, des commandes, des contrats clients et de la facturation.</li>
                         <li>Gestion des Achats: Création d'un module intelligent pour améliorer la gestion des achats et la sélection des fournisseurs.</li>
-                        <li>Dashboarding et BI: Développement d'un module pour la création de tableaux de bord interactifs et l'analyse prédictive.</li>
-                        <li>AI Imagerie et Réseaux Sociaux: Développement d'un module pour la création, modification et publication de postes publicitaires sur Facebook avec un assistant AI intégré.</li>
-                        <li>Direction d'une équipe de développeurs, collaboration avec les parties prenantes et mise en œuvre de pratiques agiles.</li>
+                        <li>Dashboarding et BI: Développement d'un module pour la création de <b>tableaux de bord interactifs</b> et l'<b>analyse prédictive</b>.</li>
+                        <li>AI Imagerie et Réseaux Sociaux: Développement d'un module pour la création, modification et publication de postes publicitaires sur Facebook avec un <b>assistant AI</b> intégré.</li>
+                        <li><b>Direction d'une équipe de développeurs</b>, collaboration avec les parties prenantes et mise en œuvre de <b>pratiques agiles</b>.</li>
                     </ul>
                 </div>
             </div>
@@ -129,7 +92,7 @@
                 </div>
                 <div class="skill-group">
                     <h3>DevOps</h3>
-                    <p contenteditable="false">Docker, Kubernetes, Jenkins, GitHub Actions, Vagrant</p>
+                    <p contenteditable="false">Docker, Kubernetes, Jenkins, GitHub Actions, Vagrant, SonarQube, Docker-Compose, Prometheus, Grafana, Nexus<br></p>
                 </div>
                 <div class="skill-group">
                     <h3>Autres</h3>
@@ -183,7 +146,7 @@
                 <div class="date" contenteditable="false">2023-2024</div>
                 <div class="content" contenteditable="false">
                     <strong>Développement d'une Application Web de Microfinance</strong>
-                    <p>Développement d'une plateforme de microfinance, utilisant Angular pour le frontend, Spring Boot pour le backend, et SQL pour la base de données. Rôle: développement du module utilisateur pour la gestion de l'authentification et coordination de l'équipe via GitHub et Trello.</p>
+                    <p>Développement d'une plateforme de microfinance, utilisant Angular pour le frontend, Spring Boot pour le backend, et SQL pour la base de données. Rôle: développement du module utilisateur pour la gestion de l'authentification et des utilisateurs, coordination de l'équipe via GitHub et Trello et mise en place d'un système de sécurité robuste.<br></p>
                 </div>
             </div>
             
@@ -203,7 +166,4 @@
                 </div>
             </div>
         </section>
-    </div>
-</body>
-<script src="script.js"></script>
-</html>
+    

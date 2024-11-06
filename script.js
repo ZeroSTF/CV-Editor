@@ -37,7 +37,7 @@ function formatText(command, value = null) {
     }
 }
 
-// Add keyboard shortcuts
+// Keyboard shortcuts
 document.addEventListener('keydown', function(e) {
     if (!editMode) return;
     
@@ -125,3 +125,40 @@ setInterval(() => {
         saveProgress();
     }
 }, 30000);
+
+function exportToFile() {
+    const content = document.getElementById('cv-container').innerHTML;
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const blob = new Blob([content], { type: 'text/html' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `cv-backup-${dateStr}.html`;
+    a.click();
+    showMessage('CV exported to file!');
+}
+
+function importFromFile() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.html';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            if (confirm('This will replace your current CV content. Continue?')) {
+                document.getElementById('cv-container').innerHTML = event.target.result;
+                saveProgress(); // Also save to localStorage as backup
+                showMessage('CV imported successfully!');
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
+// Auto-export functionality for additional safety
+function autoExport() {
+    if (editMode) {
+        exportToFile();
+    }
+}
